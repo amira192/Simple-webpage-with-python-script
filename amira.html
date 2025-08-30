@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to my page</title>
+</head>
+<body>
+    <h2 id="title">Welcome to my webpage!</h2>
+    <style>
+        body { font-family: sans-serif; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; flex-direction:column; }
+    input { width: 280px; padding: 8px; font-size: 16px; margin-bottom: 10px; }
+    #msg { margin-top: 18px; color: #333; }
+    button {
+        font-size: 25px;
+        color: antiquewhite;
+        background-color: brown;
+        border-radius: 30px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        }
+    </style>
+    <button onclick="changecontent()">Click me</button>
+    <div id="msg">What will happen?</div>
+
+    <script>
+        const messages = [
+      "First click done! 😀",
+      "You clicked again! 👍",
+      "You just can't stop clicking, can you? 🤔",
+      "Okay, we’ve reached the end… for now!"
+    ];
+    let idx = 0;
+        function changecontent(){
+            document.getElementById("title").textContent=messages[idx];
+            idx = (idx + 1) % messages.length;
+        }
+
+    </script>
+    
+</body>
+</html>
